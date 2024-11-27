@@ -13,20 +13,20 @@ Install CARLA 0.9.13: https://github.com/carla-simulator/carla/releases/tag/0.9.
 - On Linux side, i.e. WSL2:
   - `ip route show | grep -i default | awk '\{print $3\}'`
   - This will show you the IP address, i.e. {HOST_IP} to connect WSL2 to windows localhost
-  - Test connection by running ${CARLA}/PythonAPI/examples/manual_control.py --host {HOST_IP}
+  - Test connection by running `${CARLA}/PythonAPI/examples/manual_control.py --host {HOST_IP}`
     - May also need to:
       - `pip3 install --force-reinstall -v "carla==0.9.13"`
 
 ### Troubleshooting Linux Copy of CARLA Simulator
 - When attempting to run on Linux side directly, i.e. WSL2:
   - Needed to:
-    - sudo apt install libomp5
+    - `sudo apt install libomp5`
   - Still crashed each time CarlaUE4.sh was run:
     - "4.26.2-0+++UE4+Release-4.26 522 0
                           Disabling core dumps.
                           WARNING: lavapipe is not a conformant vulkan implementation, testing use only.
                           Killed"
-  - Gave up and used Windows version instead
+  - **Gave up and used Windows version instead**
 
 ### ROS1 Setup (Optional)
 Follow ROS1 installation guide: https://github.com/carla-simulator/ros-bridge/blob/master/docs/ros_installation_ros1.md
