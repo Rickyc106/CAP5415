@@ -7,15 +7,15 @@ Install CARLA 0.9.13: https://github.com/carla-simulator/carla/releases/tag/0.9.
 - Use [Windows] version: CARLA_0.9.13.zip
 - On Windows side:
   - Run CarlaUE4.exe to start server on localhost:port 2000
-  - Run using powershell: .\CarlaUE4.exe -dx11
+  - Run using powershell: `.\CarlaUE4.exe -dx11`
     - CARLA works without -dx11 until you attempt to load a new world
     - It crashes saying "Out of video memory" when loading a world
 - On Linux side, i.e. WSL2:
-  - ip route show | grep -i default | awk '\{print $3\}'
+  - `ip route show | grep -i default | awk '\{print $3\}'`
   - This will show you the IP address, i.e. {HOST_IP} to connect WSL2 to windows localhost
   - Test connection by running ${CARLA}/PythonAPI/examples/manual_control.py --host {HOST_IP}
     - May also need to:
-      - pip3 install --force-reinstall -v "carla==0.9.13"
+      - `pip3 install --force-reinstall -v "carla==0.9.13"`
 
 ### Troubleshooting Linux Copy of CARLA Simulator
 - When attempting to run on Linux side directly, i.e. WSL2:
@@ -33,19 +33,19 @@ Follow ROS1 installation guide: https://github.com/carla-simulator/ros-bridge/bl
 - Follow part "B. Using the source repository"
 - If catkin_make fails:
   - Specifically for a Python AttributeError on "importlib_metadata has no entrypoints":
-    - pip3 install --upgrade importlib_metadata
+    - `pip3 install --upgrade importlib_metadata`
 - When selecting egg file use:
   - don't do this step!!! python eggs are deprecated anyway...
 - If roslaunch carla_ros_bridge carla_ros_bridge.launch fails:
   - modify line 1 in ~/carla-ros-bridge/catkin_ws/src/ros-bridge/carla_ros_bridge/src/carla_ros_bridge to:
-    - #!/usr/bin/env python3
+    - `#!/usr/bin/env python3`
     - previously shebang was using python2 which didn't have carla installed
   - also specify host since we're on Linux side, i.e. WSL2:
     - Reference above {HOST_IP}
   - also specify longer timeout, since 2 seconds is too short:
     - 10 seconds is fine
   - also set passive to True to avoid ctrl + c on Linux side, i.e. WSL2, from quitting server:
-    - roslaunch carla_ros_bridge carla_ros_bridge.launch host:={HOST_IP} timeout:=10 passive:=True
+    - `roslaunch carla_ros_bridge carla_ros_bridge.launch host:={HOST_IP} timeout:=10 passive:=True`
 - Currently using:
   - ROS1 Noetic
 
