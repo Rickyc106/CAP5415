@@ -12,7 +12,7 @@ Install CARLA 0.9.13: https://github.com/carla-simulator/carla/releases/tag/0.9.
     - It crashes saying "Out of video memory" when loading a world
       - Reference: https://github.com/carla-simulator/carla/issues/4775
 - On Linux side, i.e. WSL2:
-  - `ip route show | grep -i default | awk '\{print $3\}'`
+  - `ip route show | grep -i default | awk '{print $3}'`
   - This will show you the IP address, i.e. {HOST_IP} to connect WSL2 to windows localhost
   - Test connection by running `${CARLA}/PythonAPI/examples/manual_control.py --host {HOST_IP}`
     - May also need to:
