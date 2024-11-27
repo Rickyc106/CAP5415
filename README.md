@@ -30,26 +30,26 @@ Install CARLA 0.9.13: https://github.com/carla-simulator/carla/releases/tag/0.9.
 
 ### ROS1 Setup (Optional)
 Follow ROS1 installation guide: https://github.com/carla-simulator/ros-bridge/blob/master/docs/ros_installation_ros1.md
-	- Follow part "B. Using the source repository"
-	- If catkin_make fails:
-		- Specifically for a Python AttributeError on "importlib_metadata has no entrypoints":
-			- pip3 install --upgrade importlib_metadata
-	- When selecting egg file use:
-		- don't do this step!!! python eggs are deprecated anyway...
-	- If roslaunch carla_ros_bridge carla_ros_bridge.launch fails:
-		- modify line 1 in ~/carla-ros-bridge/catkin_ws/src/ros-bridge/carla_ros_bridge/src/carla_ros_bridge to:
-			- #!/usr/bin/env python3
-			- previously shebang was using python2 which didn't have carla installed
-		- also specify host since we're on Linux side, i.e. WSL2:
-			- Reference above {HOST_IP}
-		- also specify longer timeout, since 2 seconds is too short:
-			- 10 seconds is fine
-		- also set passive to True to avoid ctrl + c on Linux side, i.e. WSL2, from quitting server:
-			- roslaunch carla_ros_bridge carla_ros_bridge.launch host:={HOST_IP} timeout:=10 passive:=True
-	- Currently using:
-		- ROS1 Noetic
+- Follow part "B. Using the source repository"
+- If catkin_make fails:
+  - Specifically for a Python AttributeError on "importlib_metadata has no entrypoints":
+    - pip3 install --upgrade importlib_metadata
+- When selecting egg file use:
+  - don't do this step!!! python eggs are deprecated anyway...
+- If roslaunch carla_ros_bridge carla_ros_bridge.launch fails:
+  - modify line 1 in ~/carla-ros-bridge/catkin_ws/src/ros-bridge/carla_ros_bridge/src/carla_ros_bridge to:
+    - #!/usr/bin/env python3
+    - previously shebang was using python2 which didn't have carla installed
+  - also specify host since we're on Linux side, i.e. WSL2:
+    - Reference above {HOST_IP}
+  - also specify longer timeout, since 2 seconds is too short:
+    - 10 seconds is fine
+  - also set passive to True to avoid ctrl + c on Linux side, i.e. WSL2, from quitting server:
+    - roslaunch carla_ros_bridge carla_ros_bridge.launch host:={HOST_IP} timeout:=10 passive:=True
+- Currently using:
+  - ROS1 Noetic
 
 ### dataset_generator.py (Preferred over ROS-bridge)
-Run using `dataset_generator.py --host {HOST_IP} --render`.
-`--render` can be omitted if looking to run headless.
-Other options available. Use `--help` for more arguments.
+- Run using `dataset_generator.py --host {HOST_IP} --render`.
+- `--render` can be omitted if looking to run headless.
+- Other options available. Use `--help` for more arguments.
