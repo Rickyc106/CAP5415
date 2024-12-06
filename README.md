@@ -2,7 +2,43 @@
 
 ## Course Project: Visual Odometry
 
-### Installation
+### KITTI Vision Benchmark Suite
+NOTE: This repository has been updated to include data sourced from the KITTI vision benchmark suite.
+Source: https://www.cvlibs.net/datasets/kitti/eval_odometry.php
+
+```
+@inproceedings{Geiger2012CVPR,
+  author = {Andreas Geiger and Philip Lenz and Raquel Urtasun},
+  title = {Are we ready for Autonomous Driving? The KITTI Vision Benchmark Suite},
+  booktitle = {Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year = {2012}
+}
+```
+
+It is highly recommended to start there, as setting up the CARLA environment can take some time.
+Sequences 00-02 from KITTI have been uploaded here for ease of use, but I do not take credit for sourcing these datasets.
+
+To perform visual odometry on the KITTI dataset(s):
+
+```console
+> python3 kitti_visual_odometry.py
+```
+
+To see help options:
+
+```console
+> python3 kitti_visual_odometry.py --help
+```
+
+Required python packages:
+- os
+- cv2 (4.10.0+)
+- time
+- argparse (1.1+)
+- numpy (1.24.4+)
+- matplotlib (3.5.2+)
+
+### CARLA Installation
 Install CARLA 0.9.13: https://github.com/carla-simulator/carla/releases/tag/0.9.13
 - Use [Windows] version: CARLA_0.9.13.zip
 - On Windows side:
