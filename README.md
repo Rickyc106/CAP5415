@@ -21,13 +21,13 @@ Sequences 00-02 from KITTI have been uploaded here for ease of use, but I do not
 To perform visual odometry on the KITTI dataset(s):
 
 ```console
-> python3 kitti_visual_odometry.py
+python3 kitti_visual_odometry.py
 ```
 
 To see help options:
 
 ```console
-> python3 kitti_visual_odometry.py --help
+python3 kitti_visual_odometry.py --help
 ```
 
 Required python packages:
